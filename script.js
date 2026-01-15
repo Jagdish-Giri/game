@@ -24,8 +24,16 @@ const popup = document.getElementById('resultPopup');
 const scoreX = document.getElementById('scoreX');
 const scoreO = document.getElementById('scoreO');
 const scoreDraw = document.getElementById('scoreDraw');
+const loader = document.getElementById('loader');
 
-// Sound System - LoFi Style
+// Hide loader on page load
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    if (loader) {
+      loader.classList.add('hidden');
+    }
+  }, 500);
+});
 function playSound(type) {
   try {
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
