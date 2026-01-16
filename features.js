@@ -1,27 +1,8 @@
 // ===== WAIT FOR DOM =====
 document.addEventListener('DOMContentLoaded', () => {
   
-  // ===== THEME SWITCHER =====
-  const themeBtn = document.getElementById('themeBtn');
-  let isDarkTheme = localStorage.getItem('theme') === 'dark';
-
-  function applyTheme() {
-    if (isDarkTheme) {
-      document.body.classList.add('dark-theme');
-      themeBtn.textContent = '☀️';
-    } else {
-      document.body.classList.remove('dark-theme');
-      themeBtn.textContent = '🌙';
-    }
-  }
-
-  applyTheme();
-
-  themeBtn.addEventListener('click', () => {
-    isDarkTheme = !isDarkTheme;
-    localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
-    applyTheme();
-  });
+  // Force dark theme always
+  document.body.classList.add('dark-theme');
 
   // ===== BACKGROUND MUSIC =====
   let audioContext = null;
